@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>구조선택자</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none; color: #333;
+        }
+
+        .list {
+            width: 500px;
+            margin: 50px auto;
+        }
+        .list li {
+            width: 100px;
+            float: left;
+        }
+        .list li a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ddd;
+        }
+        .list li:first-child a {
+            border-radius: 15px 0 0 15px;
+        }
+        .list li:last-child a {
+            border-radius: 0 15px 15px 0;
+        }
+        .list li:nth-child(2n) a {
+            background-color: pink;
+        }
+        .list li:nth-child(2n-1) a {
+            background-color: skyblue;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--ul.list>li*5>a[href="#"]{list$}-->
+    <ul class="list">
+        <li><a href="#">list1</a></li>
+        <li><a href="#">list2</a></li>
+        <li><a href="#">list3</a></li>
+        <li><a href="#">list4</a></li>
+        <li><a href="#">list5</a></li>
+    </ul>
+</body>
+</html>

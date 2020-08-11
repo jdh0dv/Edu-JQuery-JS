@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리2</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+        }
+    </style>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // 제이쿼리 : 문서가 준비되면 다음 함수를 실행하여라!
+        // element style로 삽입됨 >> 최상위 우선순위 ( id(100) > class(10) > tag(1) )
+        // 장점 : 하위브라우저에서도 작동
+        // $(선택자).명령어(실행문)
+        // css : 선택자의 style을 변경하는 명령어
+        
+        $(document).ready(function(){
+            // 1. box의 배경색을 skyblue로 변경
+            $(".box").css('background-color','skyblue'); //('속성','속성값')
+            
+            // 2. box의 width를 300px로 변경
+            $(".box").css('width','300');
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
