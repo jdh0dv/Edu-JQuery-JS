@@ -3,6 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery_filter2</title>
+    <style>
+        .wrap {
+            width: 420px;
+            padding: 10px;
+            background-color: gray;
+        }
+        .box {
+            width: 300px;
+            background-color: #ddd;
+        }
+        ul {
+            width: 150px;
+            background-color: pink;
+        }
+        li {
+            color : #333;
+        }
+    </style>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('ul').parent().css('width','400');
+
+            // parents : 선택자의 부모태그
+            // parents() : 한 단계 위의 부모만 지정하는 게 아니라 모든 부모를 지칭 (맨 상위 부모인 html까지 적용)
+
+            //()안에 속성 넣어서 정확하게 타켓 적용
+            $('ul').parents('.wrap').css('width','500');
+
+            // children : 선택자의 자식태그
+            $('.box').children('span').css('color','red');
+
+            // find : 후손들 중 원하는 태그 선택 (**많이 사용하는 명령어)
+            $('.box').find('a').css('color','blue');
+
+            // prev : 선택자의 앞에 있는 태그 선택
+            $('li:eq(2)').prev().css('color','gold');
+
+            // next : 선택자의 뒤에 있는 태그 선택
+            $('li:eq(2)').next().css('color','green');
+
+            // siblings : 형제들 중에서 (동위선택자) 특정태그 선택
+            $('ul').siblings('span').css('color','orange');
+
+            $('li').filter(':first').css('color','blue');
+            // $('li:first')    $('li').filter(':first')
+            // $('li:last')     $('li').filter(':last')
+            // $('li:odd')     $('li').filter(':odd')
+            // $('li:even')     $('li').filter(':even')
+
+            // .eq()
+            $('li').eq(2).css('color','red');
+            // $('li:eq(3)')
+
+
+            // .not() :  ~를 제외한
+            $('li').not(':first').css('color','gray')
+            // $('li:not(:first)') - 첫번째를 제외한 li
+            // $('li:nto(:last)') - 마지막을 제외한 li
+            // $('li:not(:animated)')
+            // $('li').not(':animated')
+            //  - 움직이는 것을 제외한 것 >> 움직이지 않을 때에만 실행하여라
+        })
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -11,7 +75,7 @@
                 <li>텍스트<a href="">링크</a><span>span</span></li>
                 <li>텍스트<a href="">링크</a><span>span</span></li>
                 <li>텍스트<a href="">링크</a><span>span</span></li>
-                <li>텍스트<a href="">링크</a><span>span</span></li>                                                
+                <li>텍스트<a href="">링크</a><span>span</span></li>
             </ul>
             <p>p태그</p>
             <span>span태그</span>
