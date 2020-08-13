@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.변수(Variable)</title>
+</head>
+<script>
+    // 변수란? 데이터가 저장되는 메모리 공간
+    // 새로운 데이터가 저장될 경우 이전 데이터는 삭제
+    
+    // 입력방법
+    var a = 100; // = : 오른쪽에 있는 값을 왼쪽에 치환하여라 (a라는 메모리공간에 100이라는 데이터를 저장해주세요.)
+    a = 200; // 100데이터값을 200으로 덮어씌우기
+    
+    // [변수 입력 시 주의]
+    // 1. 한글을 입력하지 않는다.
+    // 2. 띄어쓰기를 하지 않는다.
+    // 3. 영문은 대소문자를 구분한다.
+    // 4. 특수기호는 _,$만 사용 가능하다.
+    // 5. 첫글자는 숫자를 사용하지 않는다.
+    // 6. 약속어를 사용하지 않는다. (documnet, window 등)
+    
+    // [데이터 유형] - 문자형, 숫자형, 논리형, 비워진 데이터
+    
+    
+    // [문자형 데이터 - String]
+    var str1 = 'Javascript';
+    var str2 = '200';
+    var str3 = '<strong>문자형 데이터</strong>';
+    
+    document.write( str1, '<br/>');
+    document.write( str2, '<br/>' );
+    document.write( str3, '<br/>' );
+    
+    
+    // [숫자형 데이터 - Number]
+    var num1 = 100;
+    var num2 = Number(str2);
+    // Number() : 문자형 데이터(숫자 텍스트)를 숫자형 데이터로 치환할 때 사용
+    
+    document.write( num1, '<br/>');
+    document.write( num1 + num2, '<br/>');
+    
+    
+    // [논리형 데이터 - Boolean : true /false (숫자로는 true:1, fales:0)]
+    var bool1 = true; //텍스트 X, 약속어
+    var bool2 = false;
+    var bool3 = 10 < 5;
+    var bool4 = Boolean(); // 0, null, undefined를 제외한 모든 데이터를 true 출력
+    
+    document.write( bool1 + '<br/>');
+    document.write( bool2 + '<br/>');
+    document.write( bool3 + '<br/>');
+    document.write( bool4 + '<br/>');
+    
+    // [비워진 데이터] - null, undefined
+    var b = null;
+    var c; //선언만 하고 데이터를 안 넣은 것 -> undefined
+    
+    document.write(b + '<br/>');
+    document.write(c + '<br/>');
+    
+    //typeof : 데이터 유형을 체크하는 명령어
+    document.write(typeof num1, '<br/>');
+    document.write(typeof str2, '<br/>');
+</script>
+<body>
+    
+</body>
+</html>
