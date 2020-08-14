@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <button>영화1</button>
+    <a href="http://www.naver.com" target="_blank">영화2</a>
+    
+    <p></p>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // <img src="../img/mov1.jpg">
+        $(document).ready(function(){
+            //click
+            $('button').click(function(){
+                $('p').prepend('<img src="../img/mov1.jpg">');
+            });
+            
+            $('a').click(function(){
+                $('p').prepend('<img src="../img/mov2.jpg">');
+                
+                return false;
+            })            
+            
+        })
+    </script>
+</body>
+</html>

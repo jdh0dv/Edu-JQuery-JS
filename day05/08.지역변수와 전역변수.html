@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.지역변수와 전역변수</title>
+    <script>
+        //지역변수 & 전역변수
+        //var 선언O : 지역변수
+        //var 선언X : 전역변수
+        
+        //초기 name
+        var name = '말티즈'
+        //아직 바뀌지 않은 name: 말티즈
+        console.log(name);
+        
+        //지역변수인 name
+        function name1(){
+            var name = '댕댕이';
+            console.log(name);            
+        }
+        name1();
+        
+        //위 name1의 name은 지역변수이기 때문에 인식X, 초기 name인 말티즈가 표시
+        console.log(name);
+        
+        function name2(){
+            name = '흰둥이'; //var 사용X
+            console.log(name);
+        }
+        name2();
+        name1();
+        
+        //또한 name2의 전역변수 name이 지정되었으므로 아래 name은 흰둥이
+        console.log(name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

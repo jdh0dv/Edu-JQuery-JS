@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.함수</title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        
+        //1. 동작에 의한 함수 (ex. hover event : 타겟이 있고 특정동작 ->실행)
+        $('a').click(); //클릭해!
+        $(document).ready(); //문서 준비시켜
+        $('.box').mouseover(); // 마우스오버해
+        
+        //동작에 의한 함수 만들기 (+function)
+        $('a').click(function(){ }); 
+        $(document).ready(function(){ }); 
+        $('.box').mouseover(function(){ });       
+        
+        // ex. $('아이폰옆면버튼').누르고있어라(function({ 시리실행 }))
+        
+        
+        //2. 명령어에 의한 함수 (ex. keyframe : 타겟이 없음)
+        
+        /*
+        .box {animation:top 1s;}
+            @keyframes top {
+            from (top:100px;) to {top:0;}
+            }
+        
+        //함수만들기
+         ex. function  시리야(){
+            시리가 실행되어라
+            }
+        //함수실행
+        시리야()
+        */
+        
+        function end() {
+            $('p').text('완료되었습니다');
+            화면이 검은색으로 바뀌고 노래가 흘러나와라
+        }
+        
+        $('a').click(function(){
+            end()
+        })
+        $('b').click(function(){
+            end()
+        })
+        $('c').click(function(){
+            end()
+        })      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
