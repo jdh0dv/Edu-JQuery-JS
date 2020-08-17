@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <button>영화1</button>
+    <a href="#" target="_blank">영화2</a>
+    
+    <p></p>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // <img src="../img/mov1.jpg">
+        $(document).ready(function(){
+            //click
+            $('a').click(function(){
+                $('p').prepend('<img src="../img/mov1.jpg">');
+            });
+            
+            $('a').click(function(){
+                $('p').prepend('<img src="../img/mov2.jpg">');
+                
+                return false; //a태그의 기본기능인 링크값이동 실행됨을 방지
+            });            
+            
+            //mousedown : 마우스를 누르는 순간
+            //mouseup : 마우스에서 손가락을 뗐을 때
+            
+            $('a').mousedown(function(){
+                $('p').prepend('<img src="../img/mov3.jpg">');
+            });
+            
+            $('a').mouseup(function(){
+                $('p').prepend('<img src="../img/mov4.jpg">')
+            });
+            
+            //mouseover : 마우스를 올렸을 때 -mov5
+            $('a').mouseover(function(){
+                $('p').prepend('<img src="../img/mov5.jpg">')
+            })
+            
+            //mouseout : 마우스가 빠져나갔을 때 - p의 img를 삭제
+            $('a').mouseout(function(){
+                //$('p').empty
+                $('p img').remove();
+            })
+            
+            //focus : 커서가 이동 되었을 때
+            $('a').focus(function(){
+                $('p').append('<img src="../img/mov6.jpg">')
+            })
+            //blur : 커서가 빠져 나갔을 때
+            $('a').blur(function(){
+                $('p img').remove()
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

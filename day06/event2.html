@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .wrap {
+            width: 142px;
+            border: 3px solid #000;
+            background-color: gray;
+            margin: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            margin: 20px;
+            border: 1px solid #333;
+            background-color: #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>mouseover/mouseout , mouseenter/mouseleave</h1>
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+    <h1>mouseenter/mouseleave</h1>
+        <div class="box box1"></div>
+        
+    <h1>hover</h1>
+        <div class="box box2"></div>
+    
+    <h1>on</h1>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        //$(document).ready(function(){})
+        //위 함수 축약형
+        
+        $(function(){
+            // wrap에 마우스를 올렸을 때 console에 '올렸습니다.'라고 표시, 빠져나갔을 때는 '빠져나갔습니다.'라고 표시
+            $('.wrap').mouseenter(function(){
+                console.log('올렸습니다')
+            })
+            $('.wrap').mouseleave(function(){
+                console.log('빠져나갔습니다')
+            })
+            
+            //-마우스를 올렸을 때
+            //-mouseover : 자식태그를 타겟으로 인지
+            //-mouseenter : 자식태그를 인지하지 않는다.
+            
+            //-마우스가 빠져나갔을 때
+            //-mouseout : 자식태그를 타겟으로 인지
+            //-mouseleave : 자식태그를 인지하지 않는다.
+            
+            
+            // mouseenter/mouseleave
+            // box1에 mouseenter했을 때 box1에 'enter'라는 글자가 표시, 빠져나갔을 때는 'leave'라는 글자가 표시
+            
+            // 메서드 체인(타겟 동일, 다중명령어일 때)
+            $('.box1').mouseenter(function(){
+                $('.box1').text('enter')
+            }).mouseleave(function(){
+                $('.box1').text('leave')
+            })
+            
+            
+            // hover - mouseenter / mouseleave
+            // $('.box2').hover( mouseenter , mouseleave )
+            // $('.box2').hover( function(){}, function(){})
+            $('.box2').hover( function(){
+                $('.box2').text('hover O')
+            },function(){
+                $('.box2').text('hover X')
+            })
+            
+            // on : 동작은 다르지만 어떤 동작을 하든지 결과값이 똑같이 나오게 할 때
+            // $('a').click(function(){ })  ===  $('a').on('click',function(){})
+            // $('a').on('mouseover focus click', function(){})
+            
+            $('.box3').on('click mouseover',function(){
+                console.log('click mouseover')
+            })
+            $('.box').on('mouseout', function(){
+                console.log('mouseout')
+            })
+            
+            //제이쿼리 문법의 생김새는 똑같이 생김
+            //$('p').css('속성','속성값')
+            //$('p').css({'속성':'속성값', '속성':'속성값'})
+            //$('p').on('동작', function(){})
+            //$('p').on({'동작':functiton(){} , '동작':function(){}})
+            
+            $('.box4').on({ 
+                'click mouseover' : function(){
+                    console.log('click mouseover')
+                },
+                'mouseout' : function(){
+                    console.log('mouseout')
+                }
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
