@@ -1,0 +1,21 @@
+[css]
+$('p').css('width','300') : p의 width값을 300으로 변경
+$('p').css('width') : p의 width값을 체크(확인) -300px로 가져옴
+$('p').width(300) : p의 width값을 300으로 변경
+$('p').width() : p의 width값을 체크(확인) -300치수로 가져옴
+
+[text]
+$('p').text('내용') : p의 text를 내용으로 변경
+$('p').text('') : p의 text를 비워라
+$('p').text() : p의 text를 체크(확인)
+
+[attr] - 속성 (alt, href, target, src...)
+$('img').attr('alt','내용') : img의 alt속성을 내용으로 변경
+$('img').attr('alt') : img의 alt속성을 체크(확인)
+
+
+[웹접근성에 따라 title을 꼭 넣어줘야하는 경우]
+1. <a>태그로 새창으로 열릴 때
+2. <input>태그에 label이 없을 때 
+: input은 label을 추가하여 for-id로 연결해야 하지만 만약 추가하지 못하는 경우 title을 추가하여 설명문구를 작성
+3. <iframe>태그를 사용할 때

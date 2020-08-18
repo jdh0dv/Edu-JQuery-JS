@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallery2</title>
+</head>
+<body>
+    <ul>
+        <li><a href="../img/mov1.jpg" target="_blank" data-t="영화1" title="조이">영화1</a></li>
+        <li><a href="../img/mov2.jpg" target="_blank" data-t="영화2" title="널 기다리며">영화2</a></li>
+        <li><a href="../img/mov3.jpg" target="_blank" data-t="영화3" title="귀향">영화3</a></li>
+        <li><a href="../img/mov4.jpg" target="_blank" data-t="영화4" title="주토피아">영화4</a></li>
+        <li><a href="../img/mov5.jpg" target="_blank" data-t="영화5" title="갓 오브 이집트">영화5</a></li>
+    </ul>    
+    <p>
+        <img src="../img/mov1.jpg" alt="">
+        <br>
+        제목 : <span>조이</span>
+    </p>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // test : a를 클릭했을 때, 모든 a의 컬러를 red로 변경
+        // 1. a를 클릭했을 때, 클릭한 a의 경로를 가지고 와서 img의 src값 변경 (변수 사용)
+        // 2. a를 클릭했을 때, 클릭한 a의 텍스트를 가지고 와서 img의 alt값 변경
+        // 3. a에 마우스를 올렸을 때, 마우스 올린 a의 title값을 가지고 와서 해당 a의 텍스트를 변경
+        // 4. a에서 마우스가 빠져나갔을 때, 빠져나간 a의 data-t 값을 가지고 와서 해당 a의 텍스트를 변경
+        // 5. a를 클릭했을 때, 클릭한 a의 텍스트를 가지고 와서 span을 변경
+
+        $(function(){ 
+            $('a').click(function(){ 
+                var a_href = $(this).attr('href')
+                var a_alt = $(this).text()  
+                
+                $('img').attr({
+                    'src' : a_href,
+                    'attr' : a_alt
+                })
+                $('span').text(a_alt)
+                
+                return false;
+            })
+            
+            $('a').mouseover(function(){
+                var a_title = $(this).attr('title')   
+                
+                $(this).text(a_title);
+            })
+            
+            $('a').mouseleave(function(){
+                var a_title = $(this).attr('data-t') //block안에 지역변수로 같은 var name 사용 가능
+                
+                $(this).text(a_title);
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
