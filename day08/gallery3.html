@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallery3</title>
+</head>
+<body>
+    <p>
+        <img src="../img/mov1.jpg" alt="">
+        <br>
+        <button class="prev">이전</button>
+        <button class="next">다음</button>
+    </p>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // 1. next : next를 클릭할 때마다 다음 이미지로 이동하고 마지막 이미지에서 다시 처음으로 돌아가라
+        // - next를 클릭했을 때 img가 2번 이미지로 변경
+        // - 규칙을 찾아서 변수처리
+        // - 클릭할 때마다 다음이미지로 설정
+        // 2. prev : prev를 클릭할 때마다 이전 이미지로 이동
+        // - 5번 이미지가 이동하고 6이 되면 다시 처음으로 돌아가도록 설정
+        
+        /* $(function(){
+            var n = 1;
+            
+            $('.next').click(function(){
+                n++ //n += 1 //n = n+1
+                if(n==6){ // n>5
+                    n = 1
+                }
+                $('img').attr('src','../img/mov'+n+'.jpg')
+
+            })
+            $('.prev').click(function(){
+                n-- //n -= 1// n= n-1
+                if(n==0){ // n<1
+                   n = 5
+                }
+                $('img').attr('src','../img/mov'+n+'.jpg')
+            })
+        }) */
+        
+        $(function(){
+            var n = 1;
+            
+            $('.next').click(function(){
+                n++
+                if(n>5){
+                   n = 1
+                }
+                $('img').attr('src','../img/mov'+n+'.jpg')
+            })
+            
+            $('.prev').click(function(){
+                n--
+                if(n<1){
+                    n = 5
+                }
+                $('img').attr('src','../img/mov'+n+'.jpg')
+            })
+        })
+        
+    </script>
+</body>
+</html>

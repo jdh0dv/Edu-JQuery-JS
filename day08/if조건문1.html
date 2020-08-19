@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if조건문1</title>
+    <script>
+        //prompt : 무언가를 쓸 수 있는 안내창
+        //alert : 안내(경고)창
+        var avg = prompt('평균점수를 입력하세요.',0)
+        
+        //평균점수가 70점 이상이면 합격이라고 표시
+        //평균점수가 70점 미만이면 불합격이라고 표시
+        /* if( avg >= 70 ){
+           alert('합격')
+        }else{
+           alert('불합격')
+        }*/
+        
+        //평균점수가 80점 이상이면 우수라고 표시
+        //평균점수가 50점 이상이면 보통이라고 표시    
+        //평균점수가 50점 미만이면 노력이라고 표시
+        /*if( avg >=80 ){
+            alert('우수')
+        }else if( avg >=50 ){
+            alert('보통')     
+        }else {
+            alert('노력')
+        }*/
+        
+        //0에서 100까지 숫자를 입력했을 때에만 다음 조건을 실행하여라
+        //90이상은 A
+        //80부터 90까지는 B
+        //70부터 80까지는 C
+        //60부터 70까지는 D
+        //60미만은 F
+        
+        if(avg>=0 && avg<=100){
+            if(avg >= 90){
+               alert('A')
+            }else if(avg >= 80){
+                alert('B')
+            }else if(avg >= 70){
+                alert('C')
+            }else if(avg >= 60){
+                alert('D')
+            }else{
+                alert('F')
+            }
+        }else{
+            alert('0부터 100까지의 숫자로 입력해주세요.')
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
