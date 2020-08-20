@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: pink;
+    }
+</style>    
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.box1').animate({marginLeft:1000},1000)
+            $('.box2').animate({
+                marginLeft:1000,
+                width:300,
+                height:300
+            },1000,'linear')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if조건문2_변수</title>
+</head>
+<body>
+    <input type="text">
+    <button>전송</button>
+    <p></p>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // input안의 글자 = value
+        // .val('내용') : value를 내용으로 변경하여라
+        // .val('') : value를 지워라(아무것도 없는)
+        // .val() : value를 체크 or 가져와라
+        
+        // 1. button을 클릭했을 때 input의 내용이 있으면 '이메일 전송이 완료되었습니다.'라고 표시,
+        // input에 내용이 없으면 '이메일을 입력하세요.'라고 표시
+        // 2. button을 클릭했을 때 내용이 없으면 커서가 input으로 이동 -focus
+        //    내용이 있으면 ~에 전송이 완료되었습니다.
+        
+        $(function(){
+            
+            $('button').click(function(){
+                var email = $('input').val()                
+                
+                if( email == '' ){
+                  $('p').text('이메일을 입력하세요.')
+                  $('input').focus();
+                }else{
+                    
+                  $('p').text( email+'에 이메일 전송이 완료되었습니다.')
+                }
+            })
+        
+        })
+    </script>
+</body>
+</html>
