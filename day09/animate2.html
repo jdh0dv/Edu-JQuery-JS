@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate2</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: pink;
+        text-align: center;
+        font-size: 30px;
+    }
+</style>    
+</head>
+<body>
+    <div class="box"></div>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        //콜백함수 - 1초동안 오른쪽으로 이동, 1초 뒤에 1초동안 왼쪽으로 이동
+        $(function(){
+            setInterval(function(){
+                   
+                $('.box').animate({marginLeft:1000},1000, function(){
+                    $(this).delay(1000).animate({marginLeft:10},1000)
+                })
+                
+            },3000); //3초에 1번씩 실행
+            
+            /* var n = 0;
+            
+            setInterval(function(){ //반복실행문(몇초에 한번씩 실행하여라)
+                n++
+                $('.box').text(n)
+            }, 1000) */
+            
+        })
+    </script>
+</body>
+</html>

@@ -18,16 +18,17 @@
         
         // 1. button을 클릭했을 때 input의 내용이 있으면 '이메일 전송이 완료되었습니다.'라고 표시,
         // input에 내용이 없으면 '이메일을 입력하세요.'라고 표시
+        // 2. button을 클릭했을 때 내용이 없으면 커서가 input으로 이동 -focus
+        //    내용이 있으면 ~에 전송이 완료되었습니다.
         
         $(function(){
-            
-            var value = $('input').val()
-            
             $('button').click(function(){
-               if( value == ''){
+               if( $('input').val() == '' ){
                   $('p').text('이메일을 입력하세요.')
+                  $('input').focus();
                 }else{
-                  $('p').text('이메일 전송이 완료되었습니다.')
+                    
+                  $('p').text( $('input').val()+'에 이메일 전송이 완료되었습니다.')
                 }
             })
         
