@@ -25,13 +25,21 @@
     <script>
         //콜백함수 - 1초동안 오른쪽으로 이동, 1초 뒤에 1초동안 왼쪽으로 이동
         $(function(){
+            /*
             setInterval(function(){
-                   
+                ani();     
+            },3000); //3초에 1번씩 실행
+            */
+            setInterval(ani,3000);
+            
+            ani(); //시작할 때 1번 실행
+            
+            function ani(){
                 $('.box').animate({marginLeft:1000},1000, function(){
                     $(this).delay(1000).animate({marginLeft:10},1000)
                 })
-                
-            },3000); //3초에 1번씩 실행
+            }
+            
             
             /* var n = 0;
             
