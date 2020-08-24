@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for반복문3</title>
+</head>
+<body>
+    <ul>
+        <li>유재석</li>
+        <li>이효리</li>
+        <li>비</li>
+    </ul>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        //각자의 이름 뒤에 '~님'을 붙인다. - text만 사용
+        // uname이라는 변수에 첫번째 li의 텍스트를 가지고 오기
+        // uname에 '님'을 붙여 다시 첫번째 li의 텍스트를 변경
+        $(function(){
+            // var uname = $('li').eq(0).text()
+            // $('li').eq(0).text(uname+'님')
+
+            for( i = 0; i <= 2; i++){
+                var uname = $('li').eq(i).text()
+                $('li').eq(i).text(uname + '님')
+            }
+        })
+    </script>
+</body>
+</html>

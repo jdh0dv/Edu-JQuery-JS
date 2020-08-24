@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        .wrap {
+            width: 123px;
+            height: 179px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .wrap ul {
+            width: 615px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .wrap ul li {
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><img src="../img/mov1.jpg" alt=""></li>
+            <li><img src="../img/mov2.jpg" alt=""></li>
+            <li><img src="../img/mov3.jpg" alt=""></li>      
+            <li><img src="../img/mov4.jpg" alt=""></li>
+            <li><img src="../img/mov5.jpg" alt=""></li>       
+        </ul>
+    </div>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        // img를 클릭했을 때 2번 이미지로 이동 (왼쪽으로 1칸 이동)
+        // 규칙을 찾아 변수처리
+        $(function(){
+            $('img').click(function(){
+                n = $(this).parent().index()+1
+                
+                var mov_li = $('li').length //li 갯수를 가져오는 함수, ()를 붙이지 않음
+                
+                if( n == mov_li ){
+                  n = 0   
+                }
+                $('ul').animate({left : -123 * n})
+            })
+        }) 
+    </script>
+</body>
+</html>
+
+
+
+
+
+
