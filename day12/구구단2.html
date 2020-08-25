@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단2</title>
+</head>
+<body>
+    <script>
+        //결과가 3의 배수일 경우에만 화면에 표시
+        for( i=1; i<=9; i++){
+            for( j=1; j<=9; j++ ){
+                if( i*j%3 == 0){
+                   document.write(i+'*'+j+'='+i*j+'<br/>')
+                }
+            }
+            document.write('<hr/>')
+        }
+    </script>
+</body>
+</html>

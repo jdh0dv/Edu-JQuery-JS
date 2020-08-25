@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>galley1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .list li {
+            width: 123px;
+            float: left;
+            margin: 10px;
+        }
+        .list li strong,
+        .list li span {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <script>
+            for(i=1; i<=8; i++){
+                //document write 여러가지 태그 삽입 방법 3가지
+                
+                //document.write('<li><a href="#"><img src="../img/mov1.jpg" alt=""><strong>영화제목</strong><span>영화장르</span><p>영화에대한내용</p></a></li>')
+                
+                /*
+                document.write('<li>');
+                document.write('    <a href="#">');
+                document.write('       <img src="../img/mov1.jpg" alt="">')
+                document.write('        <strong>영화제목</strong>')
+                document.write('        <span>영화장르</span>')
+                document.write('        <p>영화에대한내용</p>')
+                document.write('    </a>')
+                document.write('</li>')
+                */
+                
+                var mov_li = '';
+                
+
+                mov_li += '<li>'
+                mov_li += '    <a href="#">'
+                mov_li += '        <img src="../img/mov1.jpg" alt="">'
+                mov_li += '        <strong>영화 제목</strong>'
+                mov_li += '        <span>영화 장르</span>'
+                mov_li += '        <p>영화에 대한 설명</p>'
+                mov_li += '    </a>'
+                mov_li += '</li>'
+                
+                document.write(mov_li)             
+            }
+        </script>
+    </ul>
+</body>
+</html>
+
+
+<!-- 참고용 코드
+        <li>
+            <a href="#">
+                <img src="../img/mov1.jpg" alt="">
+                <strong>영화 제목</strong>
+                <span>영화 장르</span>
+                <p>영화에 대한 설명</p>
+            </a>
+        </li>
+-->
