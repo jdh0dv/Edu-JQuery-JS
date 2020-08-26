@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .wrap {
+            width: 400px;
+            margin: 50px auto;
+        }
+        .tab {
+            height: 40px;
+        }
+        .tab li {
+            float: left;
+        }
+        .tab li a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            background-color: #333;
+            color: #fff;
+            padding: 0 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .con {
+            height: 300px;
+            line-height: 300px;
+            background-color: #ddd;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="tab">
+            <li><a href="#">tab1</a></li>
+            <li><a href="#">tab2</a></li>
+            <li><a href="#">tab3</a></li>
+        </ul>
+        <div class="con">con1</div>
+        <div class="con">con2</div>
+        <div class="con">con3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 2px solid #333;
+            background-color: #ddd;
+            text-align: center;
+            margin: 20px 20px 50px;
+        }
+        
+        .box.active {
+            background-color: #333;
+            border-color: blue;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>0. </h1>
+    <div class="box box0">box1</div>
+    <div class="box box0">box1</div>
+    
+    <h1>1. addClass</h1>
+    <div class="box box1">addClass</div>
+    
+    <h1>2. removeClass</h1>
+    <div class="box box2 active">removeClass</div>
+    
+    <h1>3. toggleClass</h1>
+    <div class="box box3">toggleClass</div>
+    
+    <h1>4. hasClass</h1>
+    <div class="box box4">hasClass</div>
+    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            //0.test
+            //클릭한 box0의 배경색, 테두리색, 글씨색을 변경
+            $('.box0').click(function(){
+                $(this).css({
+                    backgroundColor:'pink',
+                    borderColor:'skyblue',
+                    color:'white'
+                })
+            })
+            
+            //addClass : class를 추가
+            $('.box1').click(function(){
+                $(this).addClass('active')
+            })
+            
+            //removeClass : class를 삭제
+            $('.box2').click(function(){
+                $(this).removeClass('active')
+            })
+            
+            //toggleClass : class를 추가,삭제
+            $('.box3').click(function(){
+                $(this).toggleClass('active')
+            })
+            
+            //hasClass : class 유무 체크
+            //active가 있으면 active O라고 표시, 없으면 active X라고 표시
+            $('.box4').click(function(){
+                $(this).toggleClass('active')
+                
+                if( $(this).hasClass('active') == true){
+                    $(this).text('active O')
+                } else {
+                    $(this).text('active X')
+                }
+            })
+        })
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
