@@ -29,16 +29,16 @@
 <body>
     <ul class="list">
         <script>
-            var name = new Array('조이','널 기다리며','귀향','주토피아','갓 오브 이집트','스포트라이트','런던이즈폴른','동주')
+            var mov_name = new Array('조이','널 기다리며','귀향','주토피아','갓 오브 이집트','스포트라이트','런던이즈폴른','동주')
             
-            var genre = new Array('액션','스릴러','역사','애니메이션','SF','스릴러','SF','역사')
+            var mov_genre = new Array('액션','스릴러','역사','애니메이션','SF','스릴러','SF','역사')
             
             for(i=1; i<=8; i++){
                 document.write('<li>')
                 document.write('    <a href="#">')
                 document.write('        <img src="../img/mov'+i+'.jpg" alt="">')
-                document.write('        <strong>'+name+'</strong>')
-                document.write('        <span>'+genre+'</span>')         
+                document.write('        <strong>'+mov_name[i]+'</strong>')
+                document.write('        <span>'+mov_genre[i-1]+'</span>')         
                 document.write('        <p>영화에대한정의</p>')               
                 document.write('    </a>')
                 document.write('</li>')
