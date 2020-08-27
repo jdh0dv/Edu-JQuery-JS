@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gnb1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .gnb {
+            width: 170px;
+            height: 40px;
+            margin: 0 auto;
+            overflow: hidden;
+        }      
+        .gnb li a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ddd;
+            text-align: center;
+        }
+        .gnb li:first-child a {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+    </ul>    
+</body>
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+    // gnb에 마우스를 올렸을 때 gnb의 높이가 늘어나고, 빠져나가면 다시 줄어들어라
+    $(function(){
+        //mouseover와 mouseenter 차이 - day06 > event2.thml 참조
+        $('.gnb').mouseenter(function(){
+            $(this).animate({
+                height : 240
+            }, 100)
+        })
+        $('.gnb').mouseleave(function(){
+            $(this).stop().animate({
+                height : 40
+            }, 100)
+        })
+    })
+</script>
+</html>
+
+
+
+
+
+
+
+

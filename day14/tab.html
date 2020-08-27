@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .wrap {
+            width: 400px;
+            margin: 50px auto;
+        }
+        .tab {
+            height: 40px;
+        }
+        .tab li {
+            float: left;
+        }
+        .tab li a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            background-color: #333;
+            color: #fff;
+            padding: 0 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab li a.active {
+            background-color: blue;
+        }        
+        .con {
+            height: 300px;
+            line-height: 300px;
+            background-color: #ddd;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="tab">
+            <li><a href="#photo" class="active">포토샵</a></li>
+            <li><a href="#illu">일러스트</a></li>
+            <li><a href="#web">웹</a></li>
+        </ul>
+        <div class="con" id="photo">photoshop</div>
+        <div class="con" id="illu">illustrator</div>
+        <div class="con" id="web">website</div>
+    </div>
+    <script src="../js/jquery-3.5.1.min.js"></script>    
+    <script>
+        // 1. 첫번째 con을 제외한 나머지 보이지 않게 설정
+        //$('.con').hide()
+        //$('#photo').show()
+
+        // 2. a를 클릭했을 때 해당하는 con이 나와라 (index 사용X) 
+
+        // 3. 클릭한 tab의 css를 바꿔라         
+        /* $(function(){
+            
+           
+            
+            
+            $('.con:not(#photo)').hide()
+
+            $('.tab a').click(function(){
+                var link_li = $(this).attr('href')
+                
+                $('.con').hide()
+                $(link_li).show()
+                $('.tab a').removeClass('active')
+                $(this).addClass('active')
+                
+                return false;
+
+                
+            })
+        })*/
+        
+        $(function(){
+            $('.con:not(:first)').hide();
+            $('.tab a').click(function(){
+                var con = $(this).attr('href')
+                $('.con').hide();
+                $(con).show();
+                $('.tab a').removeClass('active');
+                $(this).addClass('active');
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

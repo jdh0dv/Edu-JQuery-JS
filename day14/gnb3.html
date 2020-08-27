@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gnb3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav_wrap {}
+        .gnb {
+            height: 40px;
+            width: 680px;
+            margin: 0 auto;
+            
+        }
+        .gnb > li {
+            float: left;
+            width: 170px;
+            position: relative;
+        }
+        .gnb li a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            background-color: #ddd;
+            text-align: center;
+        }
+        .gnb > li > a {
+            background-color: #333;
+            color: #fff;
+        }
+        .sub {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+            display: none;
+            z-index: 20;
+        }
+        .sub_bg {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            z-index:  10;
+            display: none;
+        }
+        #visual {
+            height: 500px;
+            background-color: pink
+        }
+    </style>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+
+        })
+    </script>
+</head>
+<body>
+    <nav class="nav_wrap">
+        <ul class="gnb">
+            <li>
+                <a href="#">menu A</a>
+                <ul class="sub">
+                    <li><a href="#">sub A</a></li>
+                    <li><a href="#">sub A</a></li>
+                    <li><a href="#">sub A</a></li>
+                    <li><a href="#">sub A</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu B</a>
+                <ul class="sub">
+                    <li><a href="#">sub B</a></li>
+                    <li><a href="#">sub B</a></li>
+                    <li><a href="#">sub B</a></li>
+                    <li><a href="#">sub B</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu C</a>
+                <ul class="sub">
+                    <li><a href="#">sub C</a></li>
+                    <li><a href="#">sub C</a></li>
+                    <li><a href="#">sub C</a></li>
+                    <li><a href="#">sub C</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu D</a>
+                <ul class="sub">
+                    <li><a href="#">sub D</a></li>
+                    <li><a href="#">sub D</a></li>
+                    <li><a href="#">sub D</a></li>
+                    <li><a href="#">sub D</a></li>
+                </ul>
+            </li>                   
+        </ul>
+        <div class="sub_bg"></div>
+    </nav> 
+    
+    <div id="visual">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>   
+</body>
+</html>
