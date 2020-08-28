@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each</title>
+</head>
+<body>
+    <ul>
+        <li>유재석</li>
+        <li>이효리</li>
+        <li>비</li>
+    </ul>   
+    <script src="../js/jquery-3.5.1.min.js"></script> 
+    <script>
+        // for문을 사용하여 각 li의 맨 뒤에 '님'이라는 글자를 붙이기
+        
+        // each문을 사용하여 각 li의 맨 앞에 '안녕하세요'라는 글지를 붙이기   
+        
+        $(function(){
+            for( i=0; i <= 2; i++){
+               var name = $('li').eq(i).text();
+                $('li').eq(i).text( name + '님'); 
+            }
+            
+            $('li').each(function(){
+                var name = $(this).text()
+                $(this).text('안녕하세요! '+name)
+            })
+          
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
