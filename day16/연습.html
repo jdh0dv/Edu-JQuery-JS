@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습1</title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            var n = 1; //초기값은 함수 밖에 설정
+            
+            $('button').click(function(){
+                n++
+                if(n == 6){ //n > 5
+                    n = 1
+                }                
+                $('p').text(n)
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>1</p>    
+    <button>next</button>
+</body>
+</html>

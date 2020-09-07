@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습2</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>5</li>
+        <li>8</li>
+        <li>15</li>
+        <li>22</li>
+    </ul>
+
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            // for문 - li의 숫자가 한자리일 경우 앞에 0을 붙여라(text)
+            for( i=0; i<=4; i++){
+                var date = $('li').eq(i).text(); 
+                if( date  < 10){
+                    $('li').eq(i).text('0'+date)
+                }
+               
+            }
+
+            // each문 - 각 li의 마지막에 '일'이라는 글자를 표시
+            $('li').each(function(){
+                var txt = $(this).text()
+                $(this).text(txt + '일')
+            })
+        })
+    </script>
+</body>
+</html>
