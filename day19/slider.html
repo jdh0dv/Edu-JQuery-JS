@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .slider {
+            width: 782px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider > button {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #333;
+            border-radius: 20px;
+            background-color: #ddd;
+            position: absolute;
+            top: 200px;
+            z-index: 5;
+        }
+
+        .slider. .prev { 
+            left: 0;
+        }
+
+        .slider .next {
+            right: 0;
+        }
+
+        .img_wrap {
+            width: 3910px;/* 782 x 4*/
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .img_wrap li {
+            float: left;
+        }
+
+        .indicator {
+            position: absolute;
+            left: 350px;
+            bottom: 0;
+            text-align: center;
+            z-index: 5;
+        }
+        .indi {
+            float: left;
+        }
+        .indi li {
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .indi li.on {
+            color: steelblue;
+        }
+        .btn_auto {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 20px;
+            margin-top: 2px;
+        }
+    </style>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <!--1. prev, next click-->
+    <script src="../js/slider1.js"></script>
+</head>
+<body>
+    <div class="slider">
+        <button class="prev">PREV</button>
+        <button class="next">NEXT</button>
+
+        <ul class="img_wrap">
+            <li><a href="#"><img src="../img/s4_gallery_01.png" alt=""></a></li>
+            <li><a href="#"><img src="../img/s4_gallery_02.png" alt=""></a></li>
+            <li><a href="#"><img src="../img/s4_gallery_03.png" alt=""></a></li>
+            <li><a href="#"><img src="../img/s4_gallery_04.png" alt=""></a></li>
+            <li><a href="#"><img src="../img/s4_gallery_01.png" alt=""></a></li>
+        </ul>
+        <div class="indicator">
+            <ul class="indi">
+                <li class="on"><img src="../img/ico_slider_on.png" alt=""></li>
+                <li><img src="../img/ico_slider.png" alt=""></li>
+                <li><img src="../img/ico_slider.png" alt=""></li>
+                <li><img src="../img/ico_slider.png" alt=""></li>
+            </ul>
+            <button class="btn_auto">
+                <img src="../img/stop-icon.png" alt="">
+            </button>
+            <p><span class="cpage">1</span> / <span class="apage">all</span> </p>
+        </div>
+    </div>
+</body>
+</html>
