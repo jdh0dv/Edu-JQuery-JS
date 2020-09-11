@@ -90,6 +90,39 @@ $(function(){
     // 정지 : ../img/stop-icon.png
     // 재생 : ../img/play-icon.png
 
+    /* image 경로자체를 바꿀 때
+    $('.btn_auto').click(function(){
+        var $btn_src = $('.btn_auto img')
+        var stop = '../img/stop-icon.png'
+        var play = '../img/play-icon.png'
+
+        if( $btn_src.attr('src') == stop ){
+            clearInterval(rolling)
+            $btn_src.attr('src', play)
+        }else{
+            rolling = setInterval(function(){
+                $('.next').click()
+            },1000)
+            $btn_src.attr('src', stop)
+        }
+
+    })*/
+
+    $('.btn_auto').click(function(){
+
+        if( $(this).hasClass('play') == false){
+            clearInterval(rolling);
+            $(this).addClass('play');
+            $(this).text('재생');
+        }else{
+            rolling = setInterval(function(){
+                $('.next').click()
+            },1000);
+            $(this).removeClass('play');
+            $(this).text('정지');            
+        }
+    })
+
 
 })
 

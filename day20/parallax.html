@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax2</title>
+	<style>
+		* {margin:0; padding:0;}
+		.wrap {
+			width:1000px;
+			height:500px;
+			margin:500px auto;
+			background-color:#ddd;
+			position:relative;
+		}
+		.wrap div {
+			width:500px;
+			height:50px;
+			position:absolute;
+		}
+		.box1 {
+			background-color:pink;
+			left:0;
+			top:100px;
+		}
+		.box2 {
+			background-color:skyblue;
+			right:0;
+			top:300px;
+		}
+		.box3 {
+			background-color:gold;
+			transform:rotate(90deg);
+			left:250px;
+			top:200px;
+		}
+		
+		.wrap div { display: none;}
+		.wrap.on div { display: block;}
+		.wrap.on .box1 {
+			animation: box1 1s;
+		}
+		.wrap.on .box2 {
+			animation: box2 1s 0.5s backwards;
+		}
+		.wrap.on .box3 {
+			animation: box3 1s 1s backwards;
+		}
+
+		@keyframes box1 {
+			from {transform:translateX(-500px); opacity:0;}
+		}
+		@keyframes box2 {
+			from {transform:translateX(500px); opacity:0;}
+		}
+		@keyframes box3 {
+			from {transform:rotate(90deg) translateX(-500px); opacity:0;}
+		}
+	</style>
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+				var win_top = $(window).scrollTop()
+				var win_h = $(window).height()
+				var wrap1 = $('.wrap1').offset().top
+				var wrap2 = $('.wrap2').offset().top
+				var wrap3 = $('.wrap3').offset().top												
+
+				if( win_top >= wrap1 - 300){
+					$('.wrap1').addClass('on')
+				}
+				if( win_top >= wrap2 -300 ){
+					$('.wrap2').addClass('on')
+				}else if (win_top < wrap2 - win_h){
+					$('.wrap2').removeClass('on')
+				}
+				
+				if( win_top >= wrap3 -300 ){
+					$('.wrap3').addClass('on')
+				}							
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap wrap1">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+	
+	<div class="wrap wrap2">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+	
+	<div class="wrap wrap3">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
